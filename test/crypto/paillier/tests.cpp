@@ -13,7 +13,7 @@ TEST_CASE( "gen_key", "paillier")
     {
         paillier_public_key_t* pub;
         paillier_private_key_t* priv;
-        long res = paillier_generate_key_pair(4096, &pub, &priv);
+        long res = paillier_generate_key_pair(-1, &pub, &priv);
         REQUIRE(res == PAILLIER_SUCCESS);
         paillier_free_public_key(pub);
         paillier_free_private_key(priv);
